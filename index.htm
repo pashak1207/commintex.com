@@ -1,0 +1,548 @@
+﻿<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, min-scale=1.0, max-scale=1.0">
+
+
+
+
+  <meta name="authoring-tool" content="Adobe_Animate_CC">
+
+
+
+  <!-- Removed by WebCopy -->
+  <!--<base href="https://commintex.com/">-->
+  <!-- Removed by WebCopy -->
+  <meta name="authoring-tool" content="Adobe_Animate_CC">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Группа компаний Комминтекс">
+  <meta name="title" content="Комминтекс">
+  <meta name="description"
+    content=" .mySlides {display:none;} .w3-tooltip, .w3-display-container { position: relative; } .w3-content,.w3-auto{margin-left:auto;margin-right:auto}.w3-cont...">
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management">
+  <title>Комминтекс</title>
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" href="media/system/css/modal.css" type="text/css">
+  <script type="text/javascript" src="media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="media/system/js/modal.js"></script>
+  <script type="text/javascript" src="components/com_k2/js/k2.js"></script>
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+  <script src="hat_canvas200.js?1644692112694"></script>
+  <script>
+    var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+    function init() {
+      canvas = document.getElementById("canvas");
+      anim_container = document.getElementById("animation_container");
+      dom_overlay_container = document.getElementById("dom_overlay_container");
+      var comp = AdobeAn.getComposition("60576FCDD5C6084FB3257E3BD835B9A2");
+      var lib = comp.getLibrary();
+      var loader = new createjs.LoadQueue(false);
+      loader.addEventListener("fileload", function (evt) { handleFileLoad(evt, comp) });
+      loader.addEventListener("complete", function (evt) { handleComplete(evt, comp) });
+      var lib = comp.getLibrary();
+      loader.loadManifest(lib.properties.manifest);
+    }
+    function handleFileLoad(evt, comp) {
+      var images = comp.getImages();
+      if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+    }
+    function handleComplete(evt, comp) {
+      //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+      var lib = comp.getLibrary();
+      var ss = comp.getSpriteSheet();
+      var queue = evt.target;
+      var ssMetadata = lib.ssMetadata;
+      for (i = 0; i < ssMetadata.length; i++) {
+        ss[ssMetadata[i].name] = new createjs.SpriteSheet({ "images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames })
+      }
+      exportRoot = new lib.hat_canvas200();
+      stage = new lib.Stage(canvas);
+      //Registers the "tick" event listener.
+      fnStartAnimation = function () {
+        stage.addChild(exportRoot);
+        createjs.Ticker.framerate = lib.properties.fps;
+        createjs.Ticker.addEventListener("tick", stage);
+      }
+      //Code to support hidpi screens and responsive scaling.
+      AdobeAn.makeResponsive(false, 'height', false, 2, [canvas, anim_container, dom_overlay_container]);
+      AdobeAn.compositionLoaded(lib.properties.id);
+      fnStartAnimation();
+    }
+  </script>
+  <link rel="stylesheet" href="templates/intex/css/styles.css" type="text/css">
+
+</head>
+
+<body onload="init();" style="margin:0px;">
+
+  <div id="container">
+    <div id="header">
+      <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:2000px; height:200px">
+        <canvas id="canvas" width="2000" height="200"
+          style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+        <div id="dom_overlay_container"
+          style="pointer-events:none; overflow:hidden; width:2000px; height:200px; position: absolute; left: 0px; top: 0px; display: block;">
+        </div>
+      </div>
+    </div>
+    <div id="line" class="clearfix">
+      <a href="index.htm" class="home"></a>
+      <a href="mail.html" class="mail"></a>
+      <a href="map.html" class="map"></a>
+      <form class="search" action="/index.php" method="post">
+        <label for="searchword">Поиск</label>
+        <input type="text" name="searchword" id="searchword" value="">
+        <input type="image" value="" class="img" src="templates/intex/i/bsearch.png" onclick="">
+        <input type="hidden" name="task" value="search">
+        <input type="hidden" name="option" value="com_search">
+        <input type="hidden" name="Itemid" value="49">
+      </form>
+    </div>
+    <div id="date" class="clearfix">
+      <div>04/02/2022</div>
+      <marquee>Курсы валют: Доллар США - 76.6501 (<span class='plus'>+0.1652</span>), Евро - 86.5610 (<span
+          class='plus'>+0.2784</span>)</marquee>
+    </div>
+  </div>
+
+  <table cellpadding="0" cellspacing="0">
+    <tr>
+      <td id="col1">
+        <ul class="menu">
+          <li class="parent item1"><a href="company.html"><span>О Группе Компаний</span></a>
+            <ul>
+              <li class="item10"><a href="company/main.html"><span>Общая информация</span></a></li>
+              <li class="item11"><a href="company/mission.html"><span>Миссия</span></a></li>
+              <li class="item44"><a href="company/purpose.html"><span>Цель</span></a></li>
+              <li class="item45"><a href="company/experience.html"><span>Опыт</span></a></li>
+              <li class="item18"><a href="company/rukovodstvo.html"><span>Руководство</span></a></li>
+              <li class="item50"><a href="company/structure.html"><span>Структура</span></a></li>
+              <li class="item19"><a href="company/partners.html"><span>Партнеры</span></a></li>
+              <li class="item37"><a href="company/sertificats.html"><span>Сертификаты</span></a></li>
+            </ul>
+          </li>
+          <li class="parent item2"><a href="press.html"><span>Пресс-Центр</span></a>
+            <ul>
+              <li class="item12"><a href="press/presskit.html"><span>Пресс-кит</span></a></li>
+              <li class="item38"><a href="press/acknowlegments.html"><span>Благодарности</span></a></li>
+              <li class="item54"><a href="press/publications.html"><span>Публикации</span></a></li>
+              <li class="item14"><a href="press/korporativ.html"><span>Корпоративные мероприятия</span></a></li>
+              <li class="item20"><a href="press/arhive.html"><span>Архив новостей</span></a></li>
+            </ul>
+          </li>
+          <li class="parent item3"><a href="directions.html"><span>Направления деятельности</span></a>
+            <ul>
+              <li class="item21"><a href="directions/gossektor.html"><span>Госсектор</span></a></li>
+              <li class="item46"><a href="directions/energy.html"><span>Энергетика и нефтегаз</span></a></li>
+              <li class="item47"><a href="directions/industry.html"><span>Промышленность</span></a></li>
+              <li class="item22"><a href="directions/solutions.html"><span>Инфраструктурные решения</span></a></li>
+              <li class="item51"><a href="directions/science.html"><span>Научные разработки</span></a></li>
+              <li class="item23"><a href="directions/systemssecurity.html"><span>Системы безопасности и
+                    контроля</span></a></li>
+              <li class="item24"><a href="directions/informationsecurity.html"><span>Информационная
+                    безопасность</span></a></li>
+              <li class="item55"><a href="directions/2011-02-04-19-59-49.html"><span>Комплексные поставки
+                    оборудования</span></a></li>
+            </ul>
+          </li>
+          <li class="parent item4"><a href="projects.html"><span>Проекты</span></a>
+            <ul>
+              <li class="item28"><a href="projects/specialization.html"><span>Специализация</span></a></li>
+              <li class="item31"><a href="projects/sks.html"><span>Проектирование и монтаж СКС</span></a></li>
+              <li class="item32"><a href="projects/postavka.html"><span>Поставка компьютерного обрудования и ПО,
+                    консультирование</span></a></li>
+              <li class="item39"><a href="projects/completed-projects.html"><span>Реализованные проекты</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class="parent item5"><a href="products.html"><span>Продукты и услуги</span></a>
+            <ul>
+              <li class="item52"><a href="products/oplata.html"><span>Оплата и доставка</span></a></li>
+              <li class="item29"><a href="products/data-storage.html"><span>Аппаратные системы хранения
+                    данных</span></a></li>
+              <li class="item40"><a href="products/servers.html"><span>Серверы</span></a></li>
+              <li class="item30"><a href="products/powersystems.html"><span>Системы бесперебойного питания и
+                    электроснабжения</span></a></li>
+              <li class="item41"><a href="products/graphic-stations.html"><span>Графические станции</span></a></li>
+              <li class="item42"><a href="products/thin-clients.html"><span>Тонкие клиенты</span></a></li>
+              <li class="item43"><a href="products/tape-libraries.html"><span>Ленточные библиотеки</span></a></li>
+              <li class="item33"><a href="products/portable.html"><span>Портативная техника</span></a></li>
+            </ul>
+          </li>
+          <li class="item6"><a href="information.html"><span>Раскрытие информации</span></a></li>
+          <li class="parent item7"><a href="tenders.html"><span>Закупки</span></a>
+            <ul>
+              <li class="item25"><a href="tenders/rules.html"><span>Правила проведения</span></a></li>
+              <li class="item26"><a href="tenders/advertisements.html"><span>Объявления</span></a></li>
+            </ul>
+          </li>
+          <li class="parent item8"><a href="cariera.html"><span>Карьера</span></a>
+            <ul>
+              <li class="item34"><a href="cariera/personal.html"><span>О персонале</span></a></li>
+              <li class="item35"><a href="cariera/vakacies.html"><span>Вакансии</span></a></li>
+            </ul>
+          </li>
+          <li class="item9"><a href="contacts.html"><span>Контакты</span></a></li>
+        </ul><!-- JoomlaStatsActivated -->
+        <form action="/index.php" method="post" name="login" id="form-login">
+          <p>ВХОД В ЗАКРЫТУЮ ЗОНУ</p>
+
+          <label for="modlgn_username" class="line">Логин:</label>
+          <input id="modlgn_username" type="text" name="username" class="inputbox" alt="username" size="18">
+
+          <label for="modlgn_passwd" class="line">Пароль:</label>
+          <input id="modlgn_passwd" type="password" name="passwd" class="inputbox" size="18" alt="password">
+
+
+          <label for="modlgn_remember" class="lremember">запомнить меня</label>
+          <input id="modlgn_remember" type="checkbox" name="remember" class="remember" value="yes"
+            alt="Remember Me"><br>
+
+
+          <input type="submit" name="Submit" class="enter" value="Войти">
+
+          <input type="hidden" name="option" value="com_user">
+          <input type="hidden" name="task" value="login">
+          <input type="hidden" name="return" value="Lw==">
+          <input type="hidden" name="5e3ae330ecdb0dce0a3261bcef7a972f" value="1">
+        </form>
+
+      </td>
+      <td id="col2">
+
+        <div class="article">
+          <!-- Start K2 Item Layout -->
+          <span id="startOfPageId78"></span>
+          <div id="k2Container" class="itemView">
+
+            <!-- Plugins: BeforeDisplay -->
+
+            <!-- K2 Plugins: K2BeforeDisplay -->
+
+
+            <div class="itemHeader">
+
+
+
+
+            </div>
+
+            <!-- Plugins: AfterDisplayTitle -->
+
+            <!-- K2 Plugins: K2AfterDisplayTitle -->
+
+
+
+            <div class="itemBody">
+
+              <!-- Plugins: BeforeDisplayContent -->
+
+              <!-- K2 Plugins: K2BeforeDisplayContent -->
+
+
+
+              <!-- Item text -->
+              <div class="itemFullText">
+                <!--<p> </p>
+<p style="text-align: center;">
+<object width="600" height="400" data="/templates/intex/i/company.swf" type="application/x-shockwave-flash">
+<param name="wmode" value="transparent" />
+<param name="src" value="/templates/intex/i/company.swf" />
+</object>
+</p>
+-->
+
+                <style>
+                  .mySlides {
+                    display: none;
+                  }
+
+                  .w3-tooltip,
+                  .w3-display-container {
+                    position: relative;
+                  }
+
+                  .w3-content,
+                  .w3-auto {
+                    margin-left: auto;
+                    margin-right: auto
+                  }
+
+                  .w3-content {
+                    max-width: 980px
+                  }
+
+                  .w3-auto {
+                    max-width: 1140px
+                  }
+
+                  .w3-display-container:hover .w3-display-hover {
+                    display: block
+                  }
+
+                  .w3-display-container:hover span.w3-display-hover {
+                    display: inline-block
+                  }
+
+                  .w3-display-hover {
+                    display: none
+                  }
+
+                  .w3-btn,
+                  .w3-button {
+                    border: none;
+                    display: inline-block;
+                    padding: 8px 16px;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    text-decoration: none;
+                    color: inherit;
+                    background-color: inherit;
+                    text-align: center;
+                    cursor: pointer;
+                    white-space: nowrap
+                  }
+
+                  .w3-btn:hover {
+                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+                  }
+
+                  .w3-btn,
+                  .w3-button {
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none
+                  }
+
+                  .w3-button:hover {
+                    color: #000 !important;
+                    background-color: #ccc !important
+                  }
+
+                  .w3-black,
+                  .w3-hover-black:hover {
+                    color: #fff !important;
+                    background-color: #07417B !important;
+                  }
+
+                  .w3-display-left {
+                    position: absolute;
+                    top: 50%;
+                    left: 0%;
+                    transform: translate(0%, -50%);
+                    -ms-transform: translate(-0%, -50%);
+                  }
+
+                  .w3-display-right {
+                    position: absolute;
+                    top: 50%;
+                    right: 0%;
+                    transform: translate(0%, -50%);
+                    -ms-transform: translate(0%, -50%);
+                  }
+                </style>
+
+
+                <div class="w3-content w3-display-container">
+                  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                  <img class="mySlides" src="templates/intex/slider/sl1.webp" style="width:100%">
+                  <img class="mySlides" src="templates/intex/slider/sl2.webp" style="width:100%">
+                  <img class="mySlides" src="templates/intex/slider/sl3.webp" style="width:100%">
+                  <img class="mySlides" src="templates/intex/slider/sl4.webp" style="width:100%">
+                  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                </div>
+
+                <script>
+                  var slideIndex = 1;
+                  showDivs(slideIndex);
+
+                  function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                  }
+
+                  function showDivs(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    if (n > x.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = x.length }
+                    for (i = 0; i < x.length; i++) {
+                      x[i].style.display = "none";
+                    }
+                    x[slideIndex - 1].style.display = "block";
+                  }
+                </script>
+              </div>
+
+
+              <div class="clr"></div>
+
+
+
+              <!-- Plugins: AfterDisplayContent -->
+
+              <!-- K2 Plugins: K2AfterDisplayContent -->
+
+              <div class="clr"></div>
+            </div>
+
+
+
+
+
+            <div class="clr"></div>
+
+
+
+
+            <!-- Plugins: AfterDisplay -->
+
+            <!-- K2 Plugins: K2AfterDisplay -->
+
+
+
+
+            <div class="clr"></div>
+          </div>
+          <!-- End K2 Item Layout -->
+
+          <!-- JoomlaWorks "K2" (v2.4.1) | Learn more about K2 at http://getk2.org -->
+
+
+        </div>
+
+      </td>
+      <td id="col3">
+        <div id="j1">
+          <!-- Проблема с UTF-8 при загрузке оригинала, скрипт-оригинал находится по адресу: http://pics.rbc.ru/js/rbc_indices.js -->
+          <script type="text/javascript" src="templates/intex/js/rbc_indices.js"></script>
+          <script type="text/javascript"> print_ind('_RTS_INDEX_-_MICEX_INDEX_');</script>
+        </div>
+        <div id="col32">
+          <h2 class="itemTitle">Новости</h2>
+          <!-- START 'Display News by BK 1.6.8.1' -->
+
+          <table class='contentpane-ShortNews '>
+            <tr>
+              <td class='sectiontableentry1-ShortNews ' width="100%" valign="top"><span
+                  class='-ShortNews '>26.12.2021</span><br><span class='-ShortNews '>
+                  <div class="wraptext1">
+                    <p style="font-size: x-small; color: #3366ff; white-space: pre-wrap; display: table;">Компания
+                      анонсирует приобретение 4 крупнейших ферм для майнинга криптовалюты в России.</p>
+                  </div>
+                  <p> </p>
+                  <p><span style="font-size: x-small;"><span style="color: #0000ff;"> </span></span></p>
+                </span><br><a href="component/content/article/21-news/85-280311.html" class='readon-ShortNews '
+                  title=" 26.12.2021">Подробнее...</a><span class="article_separator"></span>
+                <div style="clear: both;"></div>
+              </td>
+            </tr>
+            <tr>
+              <td class='sectiontableentry2-ShortNews ' width="100%" valign="top"><span
+                  class='-ShortNews '>03.12.2021</span><br><span class='-ShortNews '>
+                  <p> </p>
+                  <div class="wraptext1">
+                    <p><span style="color: #3366ff;"><span style="font-size: x-small;"> Группа компаний Комминтекс
+                          одержала победу в тендере на поставку оборудования для IPTV одному из ведущих сотовых
+                          операторов России – ОАО "ВымпелКом", бренд Билайн.</span></span></p>
+                    <p><span style="color: #3366ff;"><span style="font-size: x-small;"> </span></span></p>
+                  </div>
+                </span><br><a href="component/content/article/21-news/81-03022011.html" class='readon-ShortNews '
+                  title=" 03.12.2021">Подробнее...</a><span class="article_separator"></span>
+                <div style="clear: both;"></div>
+              </td>
+            </tr>
+            <tr>
+              <td class='sectiontableentry1-ShortNews ' width="100%" valign="top"><span
+                  class='-ShortNews '>19.11.2021</span><br><span class='-ShortNews '>
+                  <div class="wraptext1">
+                    <p><span style="color: #3366ff;"><span style="font-size: x-small;">Сотрудничество с
+                          Китаем.<br></span></span></p>
+                    <p><span style="color: #3366ff;"><span style="font-size: x-small;">Подписан ряд соглашений по
+                          инвестпроектам.</span></span></p>
+                  </div>
+                  <p> </p>
+                </span><br><a href="component/content/article/21-news/79-18112010.html" class='readon-ShortNews '
+                  title=" 19.11.2021">Подробнее...</a><span class="article_separator"></span>
+                <div style="clear: both;"></div>
+              </td>
+            </tr>
+            <tr>
+              <td class='sectiontableentry2-ShortNews ' width="100%" valign="top"><span
+                  class='-ShortNews '>30.12.2021</span><br><span class='-ShortNews '>
+                  <p><img src="images/stories/ng.jpg" border="0" style="border: 0pt none;" width="100"></p>
+                  <p><span style="color: #3366ff;"><span style="font-size: x-small;">Коллектив группы компаний 
+                        Комминтекс<br> От всей души поздравляет Вас...</span></span></p>
+                </span><br><a href="component/content/article/21-news/78-160806.html" class='readon-ShortNews '
+                  title=" 30.12.2021">Подробнее...</a><span class="article_separator"></span>
+                <div style="clear: both;"></div>
+              </td>
+            </tr>
+            <tr>
+              <td class='sectiontableentry1-ShortNews ' width="100%" valign="top"><span
+                  class='-ShortNews '>23.12.2021</span><br><span class='-ShortNews '>
+                  <div class="wraptext1">
+                    <p><span style="color: #3366ff;"><span style="font-size: x-small;">Подписано соглашение о
+                          сотрудничестве с компанией Microsoft.<br></span></span></p>
+                    <p><span style="color: #3366ff;"><span style="font-size: x-small;">Согласно договоренности,
+                          достигнутой между сторонами, будет проведено совместное сотрудничество по применению
+                          новейших технологий на основе решений ИКТ посредством технических возможностей Дата-центра
+                          ГК Комминтекс.</span></span></p>
+                  </div>
+                  <p> </p>
+                </span><br><a href="component/content/article/21-news/72--2.html" class='readon-ShortNews '
+                  title=" 23.12.2021">Подробнее...</a><span class="article_separator"></span>
+                <div style="clear: both;"></div>
+              </td>
+            </tr>
+            <tr>
+              <td class='sectiontableentry2-ShortNews ' width="100%" valign="top"><span
+                  class='-ShortNews '>12.12.2020</span><br><span class='-ShortNews '>
+                  <p><span style="color: #3366ff;"><span style="font-size: x-small;">ГК Комминтекс начинает работу по
+                        созданию собственного блокчейна. <br></span></span></p>
+                  <div class="wraptext1" style="text-align: left;">
+                    <p><span style="color: #3366ff;"><span style="font-size: x-small;">Речь идет о внедрении
+                          блокчейн-технологии в процессе осуществления Business Process Improvement
+                          (BPI)</span></span></p>
+                  </div>
+                  <p> </p>
+                </span><br><a href="component/content/article/21-news/77-121209.html" class='readon-ShortNews '
+                  title=" 12.12.2020">Подробнее...</a><span class="article_separator"></span>
+                <div style="clear: both;"></div>
+              </td>
+            </tr>
+          </table>
+          <span class='-ShortNews '><a href='http://commintex.ru/component/content/category/21-news'
+              class='-ShortNews '>Все новости</a></span>
+          <!-- END 'Display News by BK 1.6.8.1' -->
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+
+  <div id="footer">
+    <p>© Группа компаний «Комминтекс» 2002-2022<br> Все права защищены<br> Россия, 420103,
+      Москва,<br>Краснопресненская наб., 12-17.<br> Телефон: +7 (495) 128-0051<br> Факс: +7 (495) 128-0051<br> Е-mail:
+      <a href="mailto:public@commintex.com">public@commintex.com</a>
+    </p>
+    <div class="articles"><a href="responsibility.html">Материалы сайта</a></div>
+  </div>
+  </div>
+  <div>
+
+
+
+
+
+  </div>
+
+</body>
+
+</html>
